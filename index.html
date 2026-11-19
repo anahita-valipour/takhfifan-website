@@ -1,0 +1,3286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="container">
+          <div class="header-top-wrapper">
+            <div class="logo-search">
+              <a href="">
+                <img src="./images/main-logo.svg" alt="" />
+              </a>
+
+              <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="باز کردن منو"
+                aria-expanded="false"
+                aria-controls="sideMenu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 12h16"></path>
+                  <path d="M4 18h16"></path>
+                  <path d="M4 6h16"></path>
+                </svg>
+              </button>
+
+              <!-- قسمت جستجو -->
+
+              <form action="" class="searchbox">
+                <div class="searchbox-form-one">
+                  <svg
+                    class="icon-location"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    fill="#ccc"
+                  >
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5
+              2.5 2.5 0 0 1 0 5z"
+                    />
+                  </svg>
+
+                  <select class="searchbox-select">
+                    <option value="">تهران</option>
+                    <option value="">مشهد</option>
+                    <option value="">قم</option>
+                    <option value="">اصفهان</option>
+                  </select>
+
+                  <div class="divider"></div>
+                  <input
+                    type="text"
+                    placeholder="جستجو:رستوران , باشگاه انقلاب..."
+                    class="searchbar"
+                  />
+                </div>
+                <button class="btn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-search-icon lucide-search w-5 h-5 stroke-gray-400"
+                  >
+                    <path d="m21 21-4.34-4.34"></path>
+                    <circle cx="11" cy="11" r="8"></circle>
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+            <!-- action  -->
+            <div class="action">
+              <a href="" class="login menu-link">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-user-icon lucide-user w-6 h-6"
+                >
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                ورود / ثبت نام
+              </a>
+              <div class="divider"></div>
+              <a href="" class="shop-card">
+                <span class="circle">۰ </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-shopping-cart top-3 right-5 w-5 h-5"
+                  style="transform: scaleX(-1)"
+                >
+                  <circle cx="8" cy="21" r="1"></circle>
+                  <circle cx="19" cy="21" r="1"></circle>
+                  <path
+                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <div class="container">
+          <!-- سایه تیره پشت منوی کناری -->
+          <div class="menu-overlay" id="menuOverlay"></div>
+          <div class="header-bottom-wrapper">
+            <!-- menu  -->
+
+            <nav class="menu" id="sideMenu">
+              <div class="menu-head">
+                <span>منو</span>
+                <button
+                  type="button"
+                  class="menu-close"
+                  id="menuClose"
+                  aria-label="بستن منو"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                  </svg>
+                </button>
+              </div>
+              <ul class="menu-links">
+                <a href=""
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-menu-icon lucide-menu"
+                  >
+                    <path d="M4 12h16"></path>
+                    <path d="M4 18h16"></path>
+                    <path d="M4 6h16"></path></svg
+                ></a>
+                <li class="sub hide">
+                  <a href="" class="menu-link">همه دسته بندی ها </a>
+
+                  <ul class="sub-menu">
+                    <li class="sub-menu-links">
+                      <a href="#" class="sub-menu-svg menu-link">
+                        <span class="menu-link"> تفریح و ورزش</span>
+
+                        <svg
+                          width="100%"
+                          height="100%"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15 18L9 12L15 6"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </a>
+                      <ul class="subm-children">
+                        <li><a href="#" class="menu-link">استخر</a></li>
+                        <li><a href="#" class="menu-link">شهربازی</a></li>
+                        <li>
+                          <a href="#" class="menu-link">بازی‌های گروهی</a>
+                        </li>
+                        <li>
+                          <a href="#" class="menu-link">ورزش‌های هوایی</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="" class="menu-link">رستوران و کافه</a></li>
+                    <li><a href="" class="menu-link">تئاتر و هنر</a></li>
+                    <li><a href="" class="menu-link">پزشکی و سلامت</a></li>
+                    <li><a href="" class="menu-link">فروشگاهی اینترنتی</a></li>
+                    <li><a href="" class="menu-link">فروشگاه حضوری</a></li>
+                    <li><a href="" class="menu-link">تو و سفر</a></li>
+                    <li><a href="" class="menu-link">زیبایی و آرایش</a></li>
+                    <li><a href="" class="menu-link">یادگیری و آموزش</a></li>
+                    <li><a href="" class="menu-link">لوازم و خدمات</a></li>
+                    <li><a href="" class="menu-link">خواروبار</a></li>
+                  </ul>
+                </li>
+                <li class="hide">
+                  <a href="" class="menu-link">برگشت پول خرید اینترنتی</a>
+                </li>
+                <li class="hide">
+                  <a href="" class="menu-link">برگشت پول خرید حضوری</a>
+                </li>
+                <li class="hide">
+                  <a href="" class="menu-link">کارت تخفیف</a>
+                </li>
+                <li class="hide">
+                  <a href="" class="menu-link">تخفیفان سازمانی</a>
+                </li>
+              </ul>
+              <!-- فقط در منوی همبرگری نمایش داده می‌شود -->
+              <div class="menu-extra">
+                <a href="" class="menu-link">کسب و کار من</a>
+                <a href="" class="menu-link">دانلود اپلیکشن</a>
+              </div>
+            </nav>
+            <div class="action-left">
+              <a href="" class="menu-link">کسب و کار من</a>
+              <a href="" class="app menu-link">
+                <svg
+                  class="svg-inline--fa fa-mobile-screen-button mr-icon-svg"
+                  style="color: inherit"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="mobile-screen-button"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512"
+                  data-v-a0a6a819=""
+                >
+                  <path
+                    class=""
+                    style=""
+                    fill="currentColor"
+                    d="M304 0h-224c-35.35 0-64 28.65-64 64v384c0 35.35 28.65 64 64 64h224c35.35 0 64-28.65 64-64V64C368 28.65 339.3 0 304 0zM192 480c-17.75 0-32-14.25-32-32s14.25-32 32-32s32 14.25 32 32S209.8 480 192 480zM304 64v320h-224V64H304z"
+                  ></path>
+                </svg>
+                دانلود اپلیکشن
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="cashback">
+        <div class="container">
+          <div class="gallery-top">
+            <a href="" class="item-main-one">
+              <img
+                src="./images/8a3c826bb2cc8c9c23e248ef0dfc0de2.webp"
+                alt=""
+                class="item-img"
+              />
+            </a>
+            <a href="" class="item-main-two">
+              <img
+                src="./images/b89648ee803f6933ebf0cd1018d67c4e.webp"
+                alt=""
+                class="item-img"
+              />
+            </a>
+            <a href="" class="item-main-three">
+              <img
+                src="./images/11c1441630d9ff6b47ba27b891aa7973.webp"
+                alt=""
+                class="item-img"
+              />
+            </a>
+
+            <div class="gallery-bottom">
+              <a href="" class="item-main">
+                <img
+                  src="./images/395ffd4fd4e9fc8a7681ed588c03d7d5.webp"
+                  alt=""
+                  class="item-img"
+                />
+              </a>
+              <a href="" class="item-main">
+                <img
+                  src="./images/a9ab52482b62ef4c254c2c750c786b09.webp"
+                  alt=""
+                  class="item-img"
+                />
+              </a>
+              <a href="" class="item-main">
+                <img
+                  src="./images/c5904b1e1d04c9f138f95224b05b1628.webp"
+                  alt=""
+                  class="item-img"
+                />
+              </a>
+              <a href="" class="item-main">
+                <img
+                  src="./images/bd3612fba6e86531c545ebe812757656.webp"
+                  alt=""
+                  class="item-img"
+                />
+              </a>
+              <a href="" class="item-main">
+                <img
+                  src="./images/4c92c6c96fbe820b1743efb0f19b404e.webp"
+                  alt=""
+                  class="item-img"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="titr-header">
+            <h4 class="titr">جذاب‌ ترین‌ها</h4>
+            <a href="" class="svg-titr">
+              مشاهده همه
+              <span class="svg-link"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                >
+                  <path d="m15 18-6-6 6-6"></path></svg
+              ></span>
+            </a>
+          </div>
+          <div class="sells-card-col">
+            <div class="sells-col-card-body">
+              <span class="label">۹۲ خرید</span>
+              <picture>
+                <img src="./images/1.webp" alt="" class="img-card" />
+              </picture>
+              <div class="card-content">
+                <div class="tittle">
+                  <div class="title-right">
+                    <p>مجموعه تفریحی پل لند</p>
+                    <div class="star">
+                      <span class="location">شهرک اکباتان |</span>
+                      <span class="title-card">
+                        <svg
+                          fill="#FFC107"
+                          width="20px"
+                          height="20px"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                          />
+                        </svg>
+                        <span class="value">۳.۶</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="titttle-left">
+                    <p class="text"><span class="text-two">تا</span>۳۰%</p>
+                    <span class="discount">تخفیف</span>
+                  </div>
+                </div>
+
+                <a class="sugest">
+                  <span>مشاهده پیشنهاد ها</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                  >
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۱۰۶۴ خرید</span>
+                <picture>
+                  <img src="./images/2.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>بازدید برج میلاد</p>
+                      <div class="star">
+                        <span class="location">کوی نصر |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۷</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۳۵۰ خرید</span>
+                <picture>
+                  <img src="./images/3.jpg" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>مجموعه تله کابین توچال</p>
+                      <div class="star">
+                        <span class="location">جاده تله کابین |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۷</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲۴۱ خرید</span>
+                <picture>
+                  <img src="./images/4.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>باغ گیاه شناسی ملی ایران</p>
+                      <div class="star">
+                        <span class="location">شهرک سرو آزاد |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۴</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۹%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲۵۹۴ خرید</span>
+                <picture>
+                  <img src="./images/5.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>باغ پرندگان تهران</p>
+                      <div class="star">
+                        <span class="location">خيابان كوهستان |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۲</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۲%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="titr-header">
+            <h4 class="titr">رعدآسا</h4>
+            <a href="" class="svg-titr">
+              مشاهده همه
+              <span class="svg-link"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                >
+                  <path d="m15 18-6-6 6-6"></path></svg
+              ></span>
+            </a>
+          </div>
+          <div class="sells-card-col">
+            <div class="sells-col-card-body">
+              <span class="label">۵ خرید</span>
+              <picture>
+                <img src="./images/6.webp" alt="" class="img-card" />
+              </picture>
+              <div class="card-content">
+                <div class="tittle">
+                  <div class="title-right">
+                    <p>باشگاه سوارکاری پارکور</p>
+                    <div class="star">
+                      <span class="location">مستوفی |</span>
+                      <span class="title-card">
+                        <svg
+                          fill="#FFC107"
+                          width="20px"
+                          height="20px"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                          />
+                        </svg>
+                        <span class="value">۱.۲</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="titttle-left">
+                    <p class="text"><span class="text-two">تا</span>۴۵%</p>
+                    <span class="discount">تخفیف</span>
+                  </div>
+                </div>
+
+                <a class="sugest">
+                  <span>مشاهده پیشنهاد ها</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                  >
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲۴ خرید</span>
+                <picture>
+                  <img src="./images/7.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>شهربازی هیلانه معین مال</p>
+                      <div class="star">
+                        <span class="location">دکتر هوشیار |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۷</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۵۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲۶۲ خرید</span>
+                <picture>
+                  <img src="./images/8.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>شهربازی فان تایم</p>
+                      <div class="star">
+                        <span class="location">تجریش |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۲.۳</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۳۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲۳ خرید</span>
+                <picture>
+                  <img src="./images/9.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>شهربازی هورا پارک</p>
+                      <div class="star">
+                        <span class="location">جنت‌ آباد جنوبی |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۳.۵</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۷۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲ خرید</span>
+                <picture>
+                  <img src="./images/10.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>نمایش کمدی شوش مولوی</p>
+                      <div class="star">
+                        <span class="location">شارق غربی |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۳.۶</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۴۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="titr-header">
+            <h4 class="titr">نمایش‌های کمدی</h4>
+            <a href="" class="svg-titr">
+              مشاهده همه
+              <span class="svg-link"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                >
+                  <path d="m15 18-6-6 6-6"></path></svg
+              ></span>
+            </a>
+          </div>
+          <div class="sells-card-col">
+            <div class="sells-col-card-body">
+              <span class="label">۱۲ خرید</span>
+              <picture>
+                <img src="./images/11.webp" alt="" class="img-card" />
+              </picture>
+              <div class="card-content">
+                <div class="tittle">
+                  <div class="title-right">
+                    <p>نمایش کمدی عروس تعریفی</p>
+                    <div class="star">
+                      <span class="location">قاسم آباد |</span>
+                      <span class="title-card">
+                        <svg
+                          fill="#FFC107"
+                          width="20px"
+                          height="20px"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                          />
+                        </svg>
+                        <span class="value">۴.۳</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="titttle-left">
+                    <p class="text"><span class="text-two">تا</span>۵۰%</p>
+                    <span class="discount">تخفیف</span>
+                  </div>
+                </div>
+
+                <a class="sugest">
+                  <span>مشاهده پیشنهاد ها</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                  >
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۱۵ خرید</span>
+                <picture>
+                  <img src="./images/12.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>نمایش کمدی گیج و میج</p>
+                      <div class="star">
+                        <span class="location">شارق غربی |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۲۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۱۱۹۱خرید</span>
+                <picture>
+                  <img src="./images/15.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>نمایش کمدی برجک</p>
+                      <div class="star">
+                        <span class="location">ولیعصر |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۳</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۵۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۱۱۰۲ خرید</span>
+                <picture>
+                  <img src="./images/14.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>نمایش کمدی عروسی بابام</p>
+                      <div class="star">
+                        <span class="location">پونک جنوبی |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۳.۷</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۲۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲۶ خرید</span>
+                <picture>
+                  <img src="./images/13.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>نمایش کمدی موزیکال حکم لازمه</p>
+                      <div class="star">
+                        <span class="location">شارق غربی |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۲.۷</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۴۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="titr-header">
+            <h4 class="titr">تم پارک</h4>
+            <a href="" class="svg-titr">
+              مشاهده همه
+              <span class="svg-link"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                >
+                  <path d="m15 18-6-6 6-6"></path></svg
+              ></span>
+            </a>
+          </div>
+          <div class="sells-card-col">
+            <div class="sells-col-card-body">
+              <span class="label">۱۵ خرید</span>
+              <picture>
+                <img src="./images/16.webp" alt="" class="img-card" />
+              </picture>
+              <div class="card-content">
+                <div class="tittle">
+                  <div class="title-right">
+                    <p>رصد خانه نیاوران</p>
+                    <div class="star">
+                      <span class="location">داراباد |</span>
+                      <span class="title-card">
+                        <svg
+                          fill="#FFC107"
+                          width="20px"
+                          height="20px"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                          />
+                        </svg>
+                        <span class="value">۳.۷</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="titttle-left">
+                    <p class="text"><span class="text-two">تا</span>۱۵%</p>
+                    <span class="discount">تخفیف</span>
+                  </div>
+                </div>
+
+                <a class="sugest">
+                  <span>مشاهده پیشنهاد ها</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                  >
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۶۷۳ خرید</span>
+                <picture>
+                  <img src="./images/17..webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>اقیانوس پارک</p>
+                      <div class="star">
+                        <span class="location">آفریقا |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۱</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲۰ خرید</span>
+                <picture>
+                  <img src="./images/18.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>دکتر لند نیاوران</p>
+                      <div class="star">
+                        <span class="location">دارآباد |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۹</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲۶۵۵ خرید</span>
+                <picture>
+                  <img src="./images/21.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>شهربازی پارک ژوراسیک تهران</p>
+                      <div class="star">
+                        <span class="location">سعادت آباد |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۳.۷</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۳۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲۳۱ خرید</span>
+                <picture>
+                  <img src="./images/22.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>هیومن پارک</p>
+                      <div class="star">
+                        <span class="location">داراباد |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۸</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="titr-header">
+            <h4 class="titr">تازه‌های تخفیفان</h4>
+            <a href="" class="svg-titr">
+              مشاهده همه
+              <span class="svg-link"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                >
+                  <path d="m15 18-6-6 6-6"></path></svg
+              ></span>
+            </a>
+          </div>
+          <div class="sells-card-col">
+            <div class="sells-col-card-body">
+              <picture>
+                <img src="./images/23.webp" alt="" class="img-card" />
+              </picture>
+              <div class="card-content">
+                <div class="tittle">
+                  <div class="title-right">
+                    <p>رستوران تیوس باملند</p>
+                    <div class="star">
+                      <span class="location">شهرک گلستان</span>
+                    </div>
+                  </div>
+
+                  <div class="titttle-left">
+                    <p class="text"><span class="text-two">تا</span>۱۶%</p>
+                    <span class="discount">تخفیف</span>
+                  </div>
+                </div>
+
+                <a class="sugest">
+                  <span>مشاهده پیشنهاد ها</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                  >
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <picture>
+                  <img src="./images/24.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>سینما ترس پوکر اسکیپ</p>
+                      <div class="star">
+                        <span class="location">شمیران نو</span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۵۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <picture>
+                  <img src="./images/25.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>سیب بال (سعادت آباد)</p>
+                      <div class="star">
+                        <span class="location">سعادت آباد</span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲ خرید</span>
+                <picture>
+                  <img src="./images/26.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>هتل زرین دماوند</p>
+                      <div class="star">
+                        <span class="location">دماوند</span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <picture>
+                  <img src="./images/27.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>استخر همیاران تهران</p>
+                      <div class="star">
+                        <span class="location">جوادیه (زمانی)</span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="titr-header">
+            <h4 class="titr">تورهای پاییزی</h4>
+            <a href="" class="svg-titr">
+              مشاهده همه
+              <span class="svg-link"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                >
+                  <path d="m15 18-6-6 6-6"></path></svg
+              ></span>
+            </a>
+          </div>
+          <div class="sells-card-col">
+            <div class="sells-col-card-body">
+              <picture>
+                <img src="./images/28.webp" alt="" class="img-card" />
+              </picture>
+              <div class="card-content">
+                <div class="tittle">
+                  <div class="title-right">
+                    <p>تور کیش با آژانس هواپیمائی شادان برزین ایران...</p>
+                    <div class="star">
+                      <span class="location">باغ فیض</span>
+                    </div>
+                  </div>
+
+                  <div class="titttle-left">
+                    <p class="text"><span class="text-two">تا</span>۱۶%</p>
+                    <span class="discount">تخفیف</span>
+                  </div>
+                </div>
+
+                <a class="sugest">
+                  <span>مشاهده پیشنهاد ها</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                  >
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <picture>
+                  <img src="./images/29.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>تور انزلی و ساحل گیسوم با آژانس مسافرتی پا ب...</p>
+                      <div class="star">
+                        <span class="location">محله فردوس</span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۲۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <picture>
+                  <img src="./images/30.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>تور استانبول با آژانس هواپیمائی شادان برزین ا...</p>
+                      <div class="star">
+                        <span class="location">باغ فیض</span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۷%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <picture>
+                  <img src="./images/31.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>تور کویر مصر با آژانس مسافرتی ناخداگشت</p>
+                      <div class="star">
+                        <span class="location">باغ فیض</span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۹%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۲ خرید</span>
+                <picture>
+                  <img src="./images/32.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>تور نمک آبرود با آژانس مسافرتی پا به پا سفر</p>
+                      <div class="star">
+                        <span class="location">محله فردوس</span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۲۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="titr-header">
+            <h4 class="titr">رستوران‌های محبوب</h4>
+            <a href="" class="svg-titr">
+              مشاهده همه
+              <span class="svg-link"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                >
+                  <path d="m15 18-6-6 6-6"></path></svg
+              ></span>
+            </a>
+          </div>
+          <div class="sells-card-col">
+            <div class="sells-col-card-body">
+              <span class="label">۱۰ خرید</span>
+              <picture>
+                <img src="./images/33.webp" alt="" class="img-card" />
+              </picture>
+              <div class="card-content">
+                <div class="tittle">
+                  <div class="title-right">
+                    <p>رستوران سنتی شهربانو</p>
+                    <div class="star">
+                      <span class="location">درختی |</span>
+                      <span class="title-card">
+                        <svg
+                          fill="#FFC107"
+                          width="20px"
+                          height="20px"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                          />
+                        </svg>
+                        <span class="value">۲.۴</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="titttle-left">
+                    <p class="text"><span class="text-two">تا</span>۲۵%</p>
+                    <span class="discount">تخفیف</span>
+                  </div>
+                </div>
+
+                <a class="sugest">
+                  <span>مشاهده پیشنهاد ها</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                  >
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۸ خرید</span>
+                <picture>
+                  <img src="./images/34.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>باغ رستوران مهستان</p>
+                      <div class="star">
+                        <span class="location">بهاران |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۱</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۲۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۳۶۹ خرید</span>
+                <picture>
+                  <img src="./images/35.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>رستوران پنج ستاره رزمیلو</p>
+                      <div class="star">
+                        <span class="location">سوهانک |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۳</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۳۷ خرید</span>
+                <picture>
+                  <img src="./images/36.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>رستوران شیم لانژ چیتگر</p>
+                      <div class="star">
+                        <span class="location">شهرک چیتگر |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۱</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۲۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۱۱۹۵ خرید</span>
+                <picture>
+                  <img src="./images/37.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>رستوران هتل ورنوس</p>
+                      <div class="star">
+                        <span class="location">امیر آباد |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۱.۵</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۲۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cashback">
+        <div class="container bg-perpule">
+          <div class="refund">
+            <div class="refund-right">
+              <div class="cash-back-tittle">
+                <p>برگشت</p>
+                <p>پول</p>
+              </div>
+              <div class="cash-back-description">
+                <p>از فروشـــــــــــــــگاه‌های محلی به‌صورت حضوری خرید کن</p>
+                <div class="cash-back-reward">
+                  <p>بخشی از مبلغ پرداختی رو پاداش نقدی بگیر</p>
+                  <a href="" class="cash-btn"
+                    >اطلاعات بیشتر
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15 18L9 12L15 6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="refund-left">
+              <img
+                src="./images/pos-1-a1fa03b686b6370c476f3d4b925ae977.webp"
+                alt="cash"
+                class="cash-img"
+              />
+            </div>
+          </div>
+          <div class="cashback-list">
+            <div class="cashback-main">
+              <div class="cashback-logo">
+                <a href=""
+                  ><img src="./images/logo_Perperook_1707117552.webp" alt=""
+                /></a>
+              </div>
+              <div class="cashback-body">
+                <p class="cashback-name">پرپروک</p>
+                <p class="cash-title">
+                  <span>۲۱%</span>
+                  <span>برگشت‌ پول</span>
+                </p>
+                <p class="cashback-office">۱۵ شعبه</p>
+              </div>
+            </div>
+            <div class="cashback-main">
+              <div class="cashback-logo">
+                <a href=""
+                  ><img
+                    src="./images/logo_IMG_20210406_151920_143_1617970143.webp"
+                    alt=""
+                /></a>
+              </div>
+              <div class="cashback-body">
+                <p class="cashback-name">دیلی مارکت</p>
+                <p class="cash-title">
+                  <span>%۲</span>
+                  <span>برگشت‌ پول</span>
+                </p>
+                <p class="cashback-office">۱۰۰۴ شعبه</p>
+              </div>
+            </div>
+            <div class="cashback-main">
+              <div class="cashback-logo">
+                <a href=""
+                  ><img
+                    src="./images/logo_famili-logo-no-chainstore-1-300x123_1664971681.webp"
+                    alt=""
+                /></a>
+              </div>
+              <div class="cashback-body">
+                <p class="cashback-name">هایپر فامیلی</p>
+                <p class="cash-title">
+                  <span>%۲</span>
+                  <span>برگشت‌ پول</span>
+                </p>
+                <p class="cashback-office">۷۵ شعبه</p>
+              </div>
+            </div>
+            <div class="cashback-main">
+              <div class="cashback-logo">
+                <a href=""
+                  ><img src="./images/logo_logo_1656486435.webp" alt=""
+                /></a>
+              </div>
+              <div class="cashback-body">
+                <p class="cashback-name">وال مارکت</p>
+                <p class="cash-title">
+                  <span>%۱.۳</span>
+                  <span>برگشت‌ پول</span>
+                </p>
+                <p class="cashback-office">۴۴ شعبه</p>
+              </div>
+            </div>
+            <div class="cashback-main">
+              <div class="cashback-logo">
+                <a href=""
+                  ><img src="./images/logo_yaran-daryan_1612889668.webp" alt=""
+                /></a>
+              </div>
+              <div class="cashback-body">
+                <p class="cashback-name">یاران دریان</p>
+                <p class="cash-title">
+                  <span>%۴.۵</span>
+                  <span>برگشت‌ پول</span>
+                </p>
+                <p class="cashback-office">۷۷ شعبه</p>
+              </div>
+            </div>
+            <div class="cashback-main">
+              <div class="cashback-logo">
+                <a href=""
+                  ><img
+                    src="./images/logo_mante-logo-gold-black_1697542838.webp"
+                    alt=""
+                /></a>
+              </div>
+              <div class="cashback-body">
+                <p class="cashback-name">چرم مَنطِ</p>
+                <p class="cash-title">
+                  <span>%۷</span>
+                  <span>برگشت‌ پول</span>
+                </p>
+                <p class="cashback-office">۴۴ شعبه</p>
+              </div>
+            </div>
+            <div class="cashback-main">
+              <div class="cashback-logo">
+                <a href=""
+                  ><img src="./images/logo__-01_1697368870.webp" alt=""
+                /></a>
+              </div>
+              <div class="cashback-body">
+                <p class="cashback-name">هانیمان</p>
+                <p class="cash-title">
+                  <span>%۶</span>
+                  <span>برگشت‌ پول</span>
+                </p>
+                <p class="cashback-office">۸ شعبه</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="titr-header">
+            <h4 class="titr">بهترین مراکز دندانپزشکی</h4>
+            <a href="" class="svg-titr">
+              مشاهده همه
+              <span class="svg-link"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                >
+                  <path d="m15 18-6-6 6-6"></path></svg
+              ></span>
+            </a>
+          </div>
+          <div class="sells-card-col">
+            <div class="sells-col-card-body">
+              <span class="label">۱۰ خرید</span>
+              <picture>
+                <img src="./images/38.webp" alt="" class="img-card" />
+              </picture>
+              <div class="card-content">
+                <div class="tittle">
+                  <div class="title-right">
+                    <p>مرکز دندانپزشکی عاج</p>
+                    <div class="star">
+                      <span class="location">آرژانتین |</span>
+                      <span class="title-card">
+                        <svg
+                          fill="#FFC107"
+                          width="20px"
+                          height="20px"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                          />
+                        </svg>
+                        <span class="value">۴.۹</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="titttle-left">
+                    <p class="text"><span class="text-two">تا</span>۶۵%</p>
+                    <span class="discount">تخفیف</span>
+                  </div>
+                </div>
+
+                <a class="sugest">
+                  <span>مشاهده پیشنهاد ها</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                  >
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۸۵۲ خرید</span>
+                <picture>
+                  <img src="./images/39.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>کلینیک دندانپزشکی فیمر</p>
+                      <div class="star">
+                        <span class="location">میرداماد |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۳</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۶۷%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۱ خرید</span>
+                <picture>
+                  <img src="./images/40.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>مرکز دندانپزشکی نخ</p>
+                      <div class="star">
+                        <span class="location">صبا |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۳</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۴۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۴ خرید</span>
+                <picture>
+                  <img src="./images/41.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>دندانپزشکی دکتر درجاتی</p>
+                      <div class="star">
+                        <span class="location">هفت حوض |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۳.۱</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۳۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۶ خرید</span>
+                <picture>
+                  <img src="./images/42.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>دندانپزشکی الماس</p>
+                      <div class="star">
+                        <span class="location">قیطریه |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۳</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۷۹%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="titr-header">
+            <h4 class="titr">بوفه‌های صبحانه</h4>
+            <a href="" class="svg-titr">
+              مشاهده همه
+              <span class="svg-link"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                >
+                  <path d="m15 18-6-6 6-6"></path></svg
+              ></span>
+            </a>
+          </div>
+          <div class="sells-card-col">
+            <div class="sells-col-card-body">
+              <span class="label">۱۰۳۴ خرید</span>
+              <picture>
+                <img src="./images/43.webp" alt="" class="img-card" />
+              </picture>
+              <div class="card-content">
+                <div class="tittle">
+                  <div class="title-right">
+                    <p>رستوران پنج ستاره رزمیلو</p>
+                    <div class="star">
+                      <span class="location">سوهانک |</span>
+                      <span class="title-card">
+                        <svg
+                          fill="#FFC107"
+                          width="20px"
+                          height="20px"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                          />
+                        </svg>
+                        <span class="value">۳.۵</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="titttle-left">
+                    <p class="text"><span class="text-two">تا</span>۱۰%</p>
+                    <span class="discount">تخفیف</span>
+                  </div>
+                </div>
+
+                <a class="sugest">
+                  <span>مشاهده پیشنهاد ها</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                  >
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۱۲۴ خرید</span>
+                <picture>
+                  <img src="./images/44.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>رستوران هتل اَورین</p>
+                      <div class="star">
+                        <span class="location">انقلاب |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۹%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۵۱ خرید</span>
+                <picture>
+                  <img src="./images/45.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>هتل لوکس وزرا</p>
+                      <div class="star">
+                        <span class="location">گاندی |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۸</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۱۰%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۳۰ خرید</span>
+                <picture>
+                  <img src="./images/46.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>رستوران هتل بلوط ولنجک</p>
+                      <div class="star">
+                        <span class="location">ولنجک |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴.۳</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sells-col-card">
+              <div class="sells-col-card-body">
+                <span class="label">۱۱ خرید</span>
+                <picture>
+                  <img src="./images/47.webp" alt="" class="img-card" />
+                </picture>
+                <div class="card-content">
+                  <div class="tittle">
+                    <div class="title-right">
+                      <p>کافه رستوران هتل ویانا</p>
+                      <div class="star">
+                        <span class="location">مفتح جنوبی |</span>
+                        <span class="title-card">
+                          <svg
+                            fill="#FFC107"
+                            width="20px"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.948 20.2a1 1 0 0 1-.465-.115l-4.472-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.979-3.619-3.527a1 1 0 0 1 .554-1.706l5-.727 2.237-4.531A1 1 0 0 1 12.011 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .554 1.706l-3.621 3.526.854 4.98a1 1 0 0 1-.986 1.173z"
+                            />
+                          </svg>
+                          <span class="value">۴</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="titttle-left">
+                      <p class="text"><span class="text-two">تا</span>۲۵%</p>
+                      <span class="discount">تخفیف</span>
+                    </div>
+                  </div>
+
+                  <a class="sugest">
+                    <span>مشاهده پیشنهاد ها</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-left-icon lucide-chevron-left size-4 ltr:rotate-180"
+                    >
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="bg-whtie">
+        <div class="container">
+          <div class="footer-top">
+            <div class="footer-form">
+              <div>
+                <h3 class="footer-center-tittle">
+                  از آخرین تخفیفان‌ها مطلع باشید
+                </h3>
+                <p class="text-footer-right">
+                  با وارد کردن ایمیل خود آخرین تخفیفان‌های شهرتان را دریافت کنید
+                </p>
+              </div>
+              <form action="" class="searchbox-share">
+                <div class="searchbox-form-one">
+                  <select name="" id="" class="searchbox-select">
+                    <option value="">تهران</option>
+                    <option value="">مشهد</option>
+                    <option value="">قم</option>
+                    <option value="">اصفهان</option>
+                  </select>
+
+                  <div class="divider"></div>
+                  <input
+                    type="text"
+                    class="searchbar-email"
+                    placeholder="example@gmail.com"
+                  />
+                </div>
+                <button class="btn-share">اشتراک</button>
+              </form>
+            </div>
+            <div class="footer-top-img">
+              <a href="">
+                <img src="./images/Screenshot 2025-12-08 111548.png" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="footer-center">
+            <div class="footer-center-right">
+              <div>
+                <h3 class="footer-center-tittle">درباره تخفیفان</h3>
+                <ul>
+                  <li><a href="" class="footer-link">درباره ما</a></li>
+                  <li><a href="" class="footer-link">تماس با ما</a></li>
+                  <li><a href="" class="footer-link">قوانین و مقررات</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="footer-center-tittle">همکاری با تخفیفان</h3>
+                <ul>
+                  <li><a href="" class="footer-link">فرصت های شغلی</a></li>
+                  <li>
+                    <a href="" class="footer-link"
+                      >کسب و کار خود را تبلیغ کنید</a
+                    >
+                  </li>
+                  <li><a href="" class="footer-link">خدمات سازمانی</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="footer-center-tittle">بیشتر بخوانید</h3>
+                <ul>
+                  <li>
+                    <a href="" class="footer-link">تخفیفان چگونه کار می کند</a>
+                  </li>
+                  <li><a href="" class="footer-link">مجله تخفیفان</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-center-left">
+              <div>
+                <h4 class="title-app">دریافت اپلیکشن</h4>
+                <a href="" class="app-link-footer">
+                  <img src="./images/android@2x.webp" alt="" />
+                  <span>دانلود نسخه اندروید</span>
+                </a>
+                <a href="" class="app-link-footer">
+                  <img src="./images/ios_@2x.webp" alt="" />
+                  <span>دانلود نسخه ios</span>
+                </a>
+              </div>
+              <div>
+                <a href=""
+                  ><img
+                    src="./images/mobile-app.webp"
+                    alt=""
+                    class="footer-img-app"
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-contact">
+            <div class="icon-row">
+              <a href="" class="icon-link">
+                <svg
+                  width="20"
+                  height="20px"
+                  class="svg-footer"
+                  viewBox="0 0 100 100"
+                  fill=""
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M30.8276 2.71184C25.7736 2.95029 22.3222 3.75685 19.305 4.94245C16.1823 6.15941 13.5356 7.79246 10.9022 10.4354C8.26879 13.0783 6.64714 15.7269 5.43874 18.8543C4.26928 21.8782 3.47698 25.3324 3.25373 30.3892C3.03048 35.4461 2.98108 37.0716 3.00578 49.9707C3.03048 62.8698 3.08748 64.4868 3.33258 69.5541C3.57388 74.6071 4.37758 78.0576 5.56319 81.0757C6.78204 84.1984 8.41319 86.8441 11.0571 89.4785C13.7009 92.1129 16.3476 93.7307 19.4826 94.941C22.5036 96.1086 25.9588 96.9047 31.0147 97.126C36.0706 97.3474 37.698 97.3987 50.5933 97.374C63.4887 97.3493 65.1122 97.2923 70.1786 97.0519C75.245 96.8116 78.6773 96.0022 81.6964 94.8223C84.8191 93.6006 87.4668 91.9722 90.0992 89.3274C92.7317 86.6826 94.3524 84.0321 95.5598 80.9028C96.7302 77.8818 97.5254 74.4266 97.7448 69.3745C97.9662 64.3044 98.0184 62.6855 97.9937 49.7883C97.969 36.8911 97.9111 35.2742 97.6707 30.2087C97.4304 25.1433 96.6257 21.7034 95.4411 18.6833C94.2203 15.5606 92.5911 12.9168 89.9482 10.2805C87.3052 7.64426 84.6528 6.0245 81.5245 4.8199C78.5016 3.65045 75.0483 2.85339 69.9924 2.63489C64.9365 2.41639 63.3091 2.36034 50.409 2.38504C37.5089 2.40974 35.8939 2.46484 30.8276 2.71184ZM31.3824 88.5807C26.7511 88.3793 24.2364 87.6098 22.5606 86.9657C20.3414 86.1107 18.7606 85.0771 17.0905 83.4232C15.4204 81.7692 14.3944 80.1827 13.528 77.9683C12.8773 76.2924 12.0935 73.7806 11.8769 69.1494C11.6413 64.1438 11.5919 62.6409 11.5644 49.9593C11.5368 37.2777 11.5853 35.7767 11.8047 30.7692C12.0023 26.1418 12.7766 23.6243 13.4197 21.9494C14.2747 19.7274 15.3045 18.1494 16.9623 16.4802C18.62 14.8111 20.2018 13.7832 22.4181 12.9168C24.092 12.2632 26.6039 11.4861 31.2332 11.2657C36.2426 11.0282 37.7436 10.9807 50.4233 10.9531C63.103 10.9256 64.6078 10.9731 69.619 11.1935C74.2465 11.3949 76.765 12.1615 78.4379 12.8085C80.6581 13.6635 82.2379 14.6904 83.9071 16.351C85.5762 18.0116 86.6051 19.5877 87.4715 21.8088C88.1261 23.478 88.9032 25.9888 89.1217 30.621C89.3601 35.6304 89.4143 37.1324 89.4371 49.8111C89.4599 62.4898 89.4152 63.9956 89.1958 69.0012C88.9934 73.6324 88.2258 76.148 87.5808 77.8258C86.7258 80.044 85.695 81.6258 84.0363 83.294C82.3776 84.9622 80.7977 85.9901 78.5804 86.8565C76.9084 87.5091 74.3938 88.2881 69.7682 88.5085C64.7588 88.7441 63.2578 88.7935 50.5734 88.8211C37.8889 88.8486 36.3927 88.7973 31.3833 88.5807M70.1054 24.4926C70.1073 25.62 70.4435 26.7216 71.0715 27.6579C71.6995 28.5943 72.591 29.3234 73.6334 29.753C74.6758 30.1826 75.8221 30.2935 76.9275 30.0715C78.0329 29.8496 79.0476 29.3049 79.8434 28.5062C80.6391 27.7075 81.1801 26.6908 81.398 25.5846C81.6159 24.4784 81.5008 23.3325 81.0674 22.2917C80.634 21.2509 79.9016 20.362 78.9629 19.7375C78.0243 19.1129 76.9215 18.7808 75.7941 18.783C74.2827 18.7861 72.8343 19.3892 71.7676 20.4599C70.7008 21.5306 70.1029 22.9812 70.1054 24.4926ZM26.1108 49.927C26.1374 63.3981 37.0776 74.2936 50.5458 74.268C64.014 74.2423 74.9172 63.3031 74.8916 49.832C74.8659 36.361 63.9228 25.4625 50.4527 25.4891C36.9826 25.5157 26.0852 36.4579 26.1108 49.927ZM34.6665 49.9099C34.6603 46.7783 35.5829 43.7152 37.3176 41.1079C39.0523 38.5006 41.5211 36.4663 44.412 35.2622C47.3028 34.058 50.4858 33.7382 53.5585 34.343C56.6311 34.9479 59.4554 36.4503 61.6741 38.6603C63.8929 40.8703 65.4065 43.6886 66.0235 46.7588C66.6405 49.8291 66.3333 53.0133 65.1406 55.9089C63.9479 58.8045 61.9234 61.2814 59.323 63.0264C56.7226 64.7714 53.6632 65.7061 50.5316 65.7123C48.4522 65.7166 46.3923 65.3113 44.4696 64.5195C42.5469 63.7277 40.799 62.5648 39.3257 61.0974C37.8525 59.63 36.6827 57.8867 35.8833 55.9671C35.0839 54.0475 34.6704 51.9893 34.6665 49.9099Z"
+                  />
+                </svg>
+              </a>
+              <a href="" class="icon-link">
+                <svg
+                  fill=""
+                  width="20px"
+                  height="20px"
+                  viewBox="0 0 24 24"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Telegram icon</title>
+                  <path
+                    d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"
+                  /></svg
+              ></a>
+              <a href="" class="icon-link"
+                ><svg
+                  fill=""
+                  height="20px"
+                  width="20px"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="-337 273 123.5 256"
+                  xml:space="preserve"
+                >
+                  <path
+                    d="M-260.9,327.8c0-10.3,9.2-14,19.5-14c10.3,0,21.3,3.2,21.3,3.2l6.6-39.2c0,0-14-4.8-47.4-4.8c-20.5,0-32.4,7.8-41.1,19.3 c-8.2,10.9-8.5,28.4-8.5,39.7v25.7H-337V396h26.5v133h49.6V396h39.3l2.9-38.3h-42.2V327.8z"
+                  /></svg
+              ></a>
+              <a href="" class="icon-link"
+                ><svg
+                  fill=""
+                  height="20px"
+                  width="20px"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="-271 296.6 256.4 208.4"
+                  xml:space="preserve"
+                >
+                  <path
+                    d="M-14.6,321.2c-9.4,4.2-19.6,7-30.2,8.3c10.9-6.5,19.2-16.8,23.1-29.1c-10.2,6-21.4,10.4-33.4,12.8 c-9.6-10.2-23.3-16.6-38.4-16.6c-29,0-52.6,23.6-52.6,52.6c0,4.1,0.4,8.1,1.4,12c-43.7-2.2-82.5-23.1-108.4-55 c-4.5,7.8-7.1,16.8-7.1,26.5c0,18.2,9.3,34.3,23.4,43.8c-8.6-0.3-16.7-2.7-23.8-6.6v0.6c0,25.5,18.1,46.8,42.2,51.6 c-4.4,1.2-9.1,1.9-13.9,1.9c-3.4,0-6.7-0.3-9.9-0.9c6.7,20.9,26.1,36.1,49.1,36.5c-18,14.1-40.7,22.5-65.3,22.5 c-4.2,0-8.4-0.2-12.6-0.7c23.3,14.9,50.9,23.6,80.6,23.6c96.8,0,149.7-80.2,149.7-149.7c0-2.3,0-4.6-0.1-6.8 C-30.5,341-21.6,331.8-14.6,321.2"
+                  /></svg
+              ></a>
+            </div>
+            <div class="divider"></div>
+            <a href="" class="phone">+۹۸ - ۲۱ - ۴۲۰۲۷</a>
+            <div class="divider"></div>
+            <a href="" class="email">SUPPORT@TAKHFIFAN.COM</a>
+          </div>
+          <div class="footer-bottom">
+            <div class="text-footer">
+              <h4 class="titr-footer-right">
+                حس خوب هیجان، با تخفیف‌های روزانه تخفیفان
+              </h4>
+              <p class="text-footer-right">
+                تخفیفان پلتفرمی برای ارتباط بین مراکز خدماتی و فروشندگان با
+                مشتریان است. تخفیفان به مشتریان خود تجربه‌ای جدید و هوشمندانه در
+                خرید کردن ارائه می‌کند و باعث رونق کسب‌وکار شرکای تجاری خود
+                می‌شود. شما چه به دنبال یک خرید آنلاین یا خرید از مغازه‌های
+                نزدیک محل سکونت خود باشید و چه به دنبال یک تجربه خاص، چشیدن یک
+                طعم متفاوت یا یادگیری چیزاهای جدید باشید، با تخفیفان یک خرید
+                هوشمندانه و با قیمت مناسب را تجربه خواهید کرد. امروز تخفیفان در
+                نقطه‌ای قرار گرفته که می‌تواند روی تفریح و خرید شما تاثیر گذار
+                باشد. با تخفیفان حتی می‌توانید خرید از میوه فروشی‌ها و
+                داروخانه‌های سطح شهر را هم به خریدی هوشمندانه تبدیل کنید!
+                تخفیفان پلفترمی گسترده در ارائه انواع پیشنهادها است که خدمات خود
+                را در چندین شهر بزرگ ایران ارائه می‌دهد. با نصب سوپر اَپ تخفیفان
+                می‌توانید از همه پیشنهادهای جذاب و جدید اطراف خود و فروشگاه‌های
+                اینترنتی با خبر باشید. تخفیفان در روز ده‌ها تخفیف ویژه و جذاب
+                برایتان دارد و شما می‌توانید از تخفیف های چهل تا صد درصدی
+                استفاده کنید. برخی از دسته‌های محبوب تخفیفان، رستوران های تهران،
+                هتل، تور مسافرتی، کافی‌شاپ، آرایشگاه، کلینیک زیبایی، آتلیه، بلیط
+                تئاتر بازی اتاق فرار و کد تخفیف هستند. از محبوب ترین کد های
+                تخفیفی که در تخفیفان ارائه می شود می توان به کد تخفیف دیجی کالا،
+                کد تخفیف اسنپ فود، کد تخفیف فیلیمو و کد تخفیف نماوا اشاره کرد.
+                همچنین برای ارائه خدمات بهتر هر یک از قسمت‌های تخفیفان به
+                دسته‌بندی‌های کوچک‌تری همچون تخفیف رستوران سنتی و ایرانی،
+                رستوران با موسیقی زنده ، کافی‌شاپ، صبحانه، بوفه نهار و شام، بلیط
+                استخر، باشگاه بدن‌سازی، شهربازی، توچال، تئاتر کودک، تئاتر کمدی،
+                پینت بال، برج میلاد، لیزر موهای زائد، تور و هتل مشهد، هتل شمال و
+                سایر هتل‌ها تقسیم شده است. تخفیفان علاوه بر تهران در شهرهای
+                مشهد، تبریز، اصفهان، کرج، شیراز و استان مازندران نیز فعالیت
+                دارد.
+              </p>
+            </div>
+            <div class="logo-left">
+              <a href="">
+                <img src="./images/etehadie.webp" alt="" class="logo-footer" />
+              </a>
+              <a href=""
+                ><img
+                  src="./images/SamandehiLogo.webp"
+                  alt=""
+                  class="logo-footer"
+              /></a>
+              <a href=""
+                ><img src="./images/logo.png" alt="" class="logo-footer"
+              /></a>
+            </div>
+          </div>
+
+          <a href="" class="icon">
+            <img src="./images/support.webp" alt="" class="icon-img" />
+          </a>
+        </div>
+        <div>
+          <p class="text-end">تخفیفان ۱۴۰۴ - ساخته شده با عشق</p>
+        </div>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
